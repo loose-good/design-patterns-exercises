@@ -8,7 +8,7 @@ public class Manager implements Observer {
     }
 
     @Override
-    public void notify(IssueReport issueReport) {
+    public void update(IssueReport issueReport) {
         System.out.println(" I am manager " + name + "!\n I got the report " + issueReport);
     }
 }

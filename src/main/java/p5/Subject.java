@@ -11,10 +11,10 @@ public abstract class Subject {
         observers.add(observer);
     }
 
-    public void update() {
+    public void notifyObservers() {
         IssueReport report = computeIssueReport();
 
-        observers.forEach(o -> o.notify(report));
+        observers.forEach(o -> o.update(report));
     }
 
     protected abstract IssueReport computeIssueReport();

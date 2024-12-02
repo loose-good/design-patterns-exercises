@@ -9,21 +9,21 @@ public class Jira extends Subject {
 
     public void createIssue(String id) {
         issues.put(id, new Issue(id));
-        update();
+        notifyObservers();
     }
 
     public void closeIssue(String id) {
         Issue issue = issues.get(id);
         if (issue != null) {
             issue.close();
-            update();
+            notifyObservers();
         }
     }
 
     @Override
-    public void update() {
+    public void notifyObservers() {
         System.out.println("Updating");
-        super.update();
+        super.notifyObservers();
     }
 
     @Override
